@@ -30,7 +30,7 @@ while ValueError:
             choice = int(input("Enter an option --> "))
             if choice not in range(1,int(i)):
                 raise ValueError
-            print(functions.depure(constants.teams[choice], Teams[choice]))
+            print(functions.depure(constants.teams[choice-1], Teams[choice-1]))
         except ValueError:
             print("You must select one of the options using an integer from 1 to {}".format(i))
 
