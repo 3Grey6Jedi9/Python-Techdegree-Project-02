@@ -76,7 +76,13 @@ def create_teams(teams, data):
 #and it will return a dictionary with the most important facts about those teams in a very depurated way"""
 
 
-def average_height():
+def average_height(Team):
+    heights = []
+    for h in Team:
+        heights.append(h['height'])
+    return sum(heights)/len(Team)
+
+
 
 
 
@@ -112,7 +118,12 @@ def depure(teams, Teams):
             D_Team['Total players'] = len(T)
             D_Team['Total experienced'] = experience(T)
             D_Team['Total inexperienced'] = len(T) - experience(T)
-            D_Team['Average height'] =
+            D_Team['Average height'] = average_height(T)
+            Depured_Teams.append(D_Team)
+            D_Team = {}
+            Teams.remove(T)
+            break
+    return Depured_Teams
 
 
     
