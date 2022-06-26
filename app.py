@@ -1,7 +1,9 @@
 import constants
 import functions
-import pdb
 
+
+players = functions.clean_data(constants.players)
+Teams = functions.create_teams(constants.teams, players)
 
 print("""BASKETBALL TEAM STATS TOOL
 
@@ -26,8 +28,11 @@ while ValueError:
             exit()
         try:
             choice = int(input("Enter an option --> "))
-            #Continue from here (I have to manage posible errors and then display all the characteristics of the team selected
+            if choice not in range(1,int(i)):
+                raise ValueError
+            print(functions.depure(constants.teams[choice], Teams[choice]))
+        except ValueError:
+            print("You must select one of the options using an integer from 1 to {}".format(i))
 
     except ValueError:
         print("You must enter 1 or 2 please")
-    
