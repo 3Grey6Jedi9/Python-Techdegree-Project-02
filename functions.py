@@ -109,21 +109,11 @@ def guardians_on_Team(Team):
 
 
 
-def depure(teams, Teams):
-    Depured_Teams = []
-    D_Team = {}
-    for t in teams:
-        for T in Teams:
-            D_Team['Team'] = t[0] + ' Stats'
-            D_Team['Total players'] = len(T)
-            D_Team['Total experienced'] = experience(T)
-            D_Team['Total inexperienced'] = len(T) - experience(T)
-            D_Team['Average height'] = average_height(T)
-            Depured_Teams.append(D_Team)
-            D_Team = {}
-            Teams.remove(T)
-            break
-    return Depured_Teams
-
-
-    
+def depure(team, Team):
+    Depured_Team = {}
+    Depured_Team['Team'] = team + ' Stats'
+    Depured_Team['Total players'] = len(Team)
+    Depured_Team['Total experienced'] = experience(Team)
+    Depured_Team['Total inexperienced'] = len(Team) - experience(Team)
+    Depured_Team['Average height'] = average_height(Team)
+    return Depured_Team
