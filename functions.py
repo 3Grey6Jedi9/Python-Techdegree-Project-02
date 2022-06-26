@@ -8,11 +8,18 @@ def experience(data):
     return players_experienced
 
 
+
+
+
+
 def boolean(string):
     if string == 'YES':
         return True
     else:
         return False
+
+
+
 
 
 def clean_data(data):
@@ -26,6 +33,9 @@ def clean_data(data):
         new_dict['experience'] = boolean(dict['experience'])
         new_data.append(new_dict)
     return new_data
+
+
+
 
 
 def create_teams(teams, data):
@@ -72,8 +82,9 @@ def create_teams(teams, data):
     Teams[i] = data
     return Teams
 
-#This function will take the teams' name (teams) and the characteristics of each team (Teams)
-#and it will return a dictionary with the most important facts about those teams in a very depurated way"""
+
+
+
 
 
 def average_height(Team):
@@ -81,6 +92,7 @@ def average_height(Team):
     for h in Team:
         heights.append(h['height'])
     return sum(heights)/len(Team)
+
 
 
 
@@ -96,12 +108,18 @@ def players_on_Team(Team):
 
 
 
+
+
+
 def guardians_on_Team(Team):
-    guardians = set()
+    guardians_list = []
     for guardian in Team:
-        g = guardian['guardians']
-        set(g)
-        guardians.add(g)
+        if type(guardian['guardians']) == list:
+            for g in guardian['guardians']:
+                guardians_list.append(g)
+        else:
+            guardians_list.append(guardian)
+    guardians = set(tuple(guardians_list))
     return guardians
 
 
@@ -117,3 +135,4 @@ def depure(team, Team):
     Depured_Team['Total inexperienced'] = len(Team) - experience(Team)
     Depured_Team['Average height'] = average_height(Team)
     return Depured_Team
+            
