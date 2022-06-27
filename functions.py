@@ -27,7 +27,7 @@ def clean_data(data):
     for dict in data:
         new_dict = {}
         new_dict['name'] = dict['name']
-        new_dict['guardians'] = dict['guardians'].split('and')
+        new_dict['guardians'] = dict['guardians'].split(' and ')
         new_dict['height'] = dict['height'].split(' ')
         new_dict['height'] = int(dict['height'][:2])
         new_dict['experience'] = boolean(dict['experience'])
@@ -136,4 +136,6 @@ def depure(team, Team):
     Depured_Team['Average height'] = float(average_height(Team))
     Depured_Team['Average height'] = "{:.2f}".format(Depured_Team['Average height'])
     return Depured_Team
-            
+
+
+    
