@@ -136,3 +136,7 @@ def depure(team, Team):
     Depured_Team['Average height'] = float(average_height(Team))
     Depured_Team['Average height'] = "{:.2f}".format(Depured_Team['Average height'])
     return Depured_Team
+
+
+if __name__ == "__main__":
+    print("In this module I define 8 functions in order to manage data in a proper way")
