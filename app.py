@@ -46,7 +46,7 @@ Here are your choices:
     {}\n\n""".format(players_on_Team))
             print("""Guardians:
     {}\n\n""".format(guardians_on_Team))
-            key = input("Please press any key to continue...")
+            key = input("Please press 'Enter' to continue...")
 
         except ValueError:
             print("You must select one of the options using an integer from 1 to {}".format(i))
