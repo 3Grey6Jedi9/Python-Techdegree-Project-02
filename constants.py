@@ -112,3 +112,6 @@ players = [{
         'height': '41 inches'
     }
 ]
+
+if __name__ == "__main__":
+    print("This module contains all the incial data")
