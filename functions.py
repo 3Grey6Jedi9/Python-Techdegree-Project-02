@@ -133,6 +133,7 @@ def depure(team, Team):
     Depured_Team['Total players'] = len(Team)
     Depured_Team['Total experienced'] = experience(Team)
     Depured_Team['Total inexperienced'] = len(Team) - experience(Team)
-    Depured_Team['Average height'] = average_height(Team)
+    Depured_Team['Average height'] = float(average_height(Team))
+    Depured_Team['Average height'] = "{:.2f}".format(Depured_Team['Average height'])
     return Depured_Team
             
