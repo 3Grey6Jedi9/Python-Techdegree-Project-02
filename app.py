@@ -45,10 +45,14 @@ Here are your choices:
                 print("Total experienced: {}".format(depure['Total experienced']))
                 print("Total inexperienced: {}".format(depure['Total inexperienced']))
                 print("Average height: {}\n\n".format(depure['Average height']))
-                print("""Players on Team:
-    {}\n\n""".format(players_on_Team))
-                print("""Guardians:
-    {}\n\n""".format(guardians_on_Team))
+                p = functions.players_on_Team(Teams[choice-1])
+                print("Players on Team:")
+                print(*p, sep = ', ')
+                print("\n")
+                g = functions.guardians_on_Team(Teams[choice-1])
+                print("Guardians on Team:")
+                print(*g, sep = ', ')
+                print("\n")
                 key = input("Please press 'Enter' to continue...\n")
                 break
             except ValueError:
