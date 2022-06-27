@@ -136,14 +136,3 @@ def depure(team, Team):
     Depured_Team['Average height'] = float(average_height(Team))
     Depured_Team['Average height'] = "{:.2f}".format(Depured_Team['Average height'])
     return Depured_Team
-
-if __name__ == "__main__":
-
-    experience(data)
-    boolean(string)
-    clean_data(data)
-    create_teams(teams, data)
-    average_height(Team)
-    players_on_Team(Team)
-    guardians_on_Team(Team)
-    depure(team, Team)
