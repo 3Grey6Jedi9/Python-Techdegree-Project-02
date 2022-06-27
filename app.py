@@ -36,7 +36,7 @@ Here are your choices:
             depure = functions.depure(constants.teams[choice-1], Teams[choice-1])
             players_on_Team = functions.players_on_Team(Teams[choice-1])
             guardians_on_Team = functions.guardians_on_Team(Teams[choice-1])
-            print("""Team: {}
+            print("""\nTeam: {}
 ---------------------------------------------------""".format(depure['Team']))
             print("Total players: {}".format(depure['Total players']))
             print("Total experienced: {}".format(depure['Total experienced']))
@@ -46,7 +46,7 @@ Here are your choices:
     {}\n\n""".format(players_on_Team))
             print("""Guardians:
     {}\n\n""".format(guardians_on_Team))
-            key = input("Please press 'Enter' to continue...")
+            key = input("Please press 'Enter' to continue...\n")
 
         except ValueError:
             print("You must select one of the options using an integer from 1 to {}".format(i))
