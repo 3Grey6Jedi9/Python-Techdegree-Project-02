@@ -1,4 +1,5 @@
 def experience(data):
+    """Through this function I can get the number of experienced players"""
     players_experienced = 0
     for dict in data:
         if dict['experience'] == True:
@@ -13,6 +14,7 @@ def experience(data):
 
 
 def boolean(string):
+    """This function transforms a string into a boolean"""
     if string == 'YES':
         return True
     else:
@@ -23,6 +25,7 @@ def boolean(string):
 
 
 def clean_data(data):
+    """This function transforms the given data into a more proper data"""
     new_data = []
     for dict in data:
         new_dict = {}
@@ -39,6 +42,7 @@ def clean_data(data):
 
 
 def create_teams(teams, data):
+    """This function distributes players into the given teams in a cetain way"""
     data_copy = data.copy()
     Number_Teams = len(teams)
     Number_Players = len(data_copy)
@@ -88,6 +92,7 @@ def create_teams(teams, data):
 
 
 def average_height(Team):
+    """This function returns the average height of a given team"""
     heights = []
     for h in Team:
         heights.append(h['height'])
@@ -99,6 +104,7 @@ def average_height(Team):
 
 
 def players_on_Team(Team):
+    """This function returns the names of the players of a given team"""
     players = set()
     for player in Team:
         p = player['name']
@@ -112,6 +118,7 @@ def players_on_Team(Team):
 
 
 def guardians_on_Team(Team):
+    """This function returns the names of the guardians of a given team"""
     guardians_list = []
     for guardian in Team:
         if type(guardian['guardians']) == list:
@@ -128,6 +135,7 @@ def guardians_on_Team(Team):
 
 
 def depure(team, Team):
+    """This function takes the team's information and returns what really matters about that team"""
     Depured_Team = {}
     Depured_Team['Team'] = team + ' Stats'
     Depured_Team['Total players'] = len(Team)
